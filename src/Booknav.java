@@ -243,9 +243,9 @@ public class Booknav extends javax.swing.JFrame {
         {
             try{
                 Class.forName("java.sql.DriverManager");
-                Connection con=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/library","root","12345");
+                Connection con=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/library","root","");
                 Statement i=(Statement)con.createStatement();
-                String q="select * from member where accno='"+accno+"';";
+                String q="select * from `member` where accno='"+accno+"';";
                 ResultSet rs=i.executeQuery(q);
                 if(rs.next())
                 {

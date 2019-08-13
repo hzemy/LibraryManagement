@@ -128,7 +128,7 @@ public class Avbooklist extends javax.swing.JFrame {
         DefaultTableModel dt=(DefaultTableModel)t1.getModel();
         try{
             Class.forName("java.sql.DriverManager");
-            Connection con=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/library","root","12345");
+            Connection con=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/library","root","");
             Statement i=(Statement)con.createStatement();
             String q="select * from library where status='no';";
             ResultSet rs=i.executeQuery(q);

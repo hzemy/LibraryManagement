@@ -218,9 +218,9 @@ public class Mementry extends javax.swing.JFrame {
         {
             try{
                 Class.forName("java.sql.DriverManager");
-                Connection con=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/library","root","12345");
+                Connection con=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/library","root","");
                 Statement i=(Statement)con.createStatement();
-                String q="insert into member(mno,mname,maddress,mphone,mdate,mfee,missue) values('"+mno+"','"+mname+"','"+madd+"','"+mphone+"','"+mdate+"','"+mfee+"','"+s+"');";
+                String q="insert into `member`(mno,mname,maddress,mphone,mdate,mfee,missue) values('"+mno+"','"+mname+"','"+madd+"','"+mphone+"','"+mdate+"','"+mfee+"','"+s+"');";
                 i.executeUpdate(q);
                 JOptionPane.showMessageDialog(null,"Successful insertion");
             }

@@ -187,11 +187,11 @@ public class Bookissue extends javax.swing.JFrame {
                 {
             try{
                 Class.forName("java.sql.DriverManager");
-                Connection con2=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/library","root","12345");
+                Connection con2=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/library","root","");
                 Statement j=(Statement)con2.createStatement();
                 String p1="insert into missue values('"+accno+"','"+mno+"','"+idate+"','"+rdate+"');";
                 String p2="update library set status='Yes' where accno='"+accno+"';";
-                String p3="update member set status='Yes' where mno='"+mno+"';";
+                String p3="update `member` set status='Yes' where mno='"+mno+"';";
                 i.executeUpdate(p1);
                 i.executeUpdate(p2);
                 i.executeUpdate(p3);

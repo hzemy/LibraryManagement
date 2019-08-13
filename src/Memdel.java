@@ -128,9 +128,9 @@ public class Memdel extends javax.swing.JFrame {
         {
             try{
                 Class.forName("java.sql.DriverManager");
-                Connection con=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/library","root","12345");
+                Connection con=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/library","root","");
                 Statement i=(Statement)con.createStatement();
-                String q="delete from member where mno='"+mno+"';";
+                String q="delete from `member` where mno='"+mno+"';";
                 i.executeUpdate(q);
                 JOptionPane.showMessageDialog(null,"Successful deletion");
             }

@@ -142,10 +142,10 @@ public class Bookreturn extends javax.swing.JFrame {
         {
             try{
                 Class.forName("java.sql.DriverManager");
-                Connection con=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/library","root","12345");
+                Connection con=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/library","root","");
                 Statement i=(Statement)con.createStatement();
                 String q1="update library set status='no' where accno='"+accno+"';";
-                String q2="update member set status='no' where mno='"+mno+"';";
+                String q2="update `member` set status='no' where mno='"+mno+"';";
                 i.executeUpdate(q1);
                 i.executeUpdate(q2);
                 JOptionPane.showMessageDialog(null,"Successful updation");
